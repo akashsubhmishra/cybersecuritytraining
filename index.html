@@ -78,7 +78,25 @@
             align-items: center;
             height: 100%;
         }
+        .logo-box {
+            width: 55px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(34, 211, 238, 0.03);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            border-radius: 8px;
+            padding: 5px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
+        .logo-box img {
+            width: 200%;
+            height: 300%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.4));
+        }
         .brand-domain {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.35rem;
@@ -411,7 +429,10 @@
     <!-- Header Navigation -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="brand-domain">Cybersecurity<span>Training.in</span></a>
+            <a href="#" class="brand-domain">Cybersecurity<span>Training.in</span></     
+                <div class="logo-box">
+                    <img src="logo.jpg" alt="Automotive Cybersecurity Shield Emblem">
+                </div>
             <ul class="nav-menu">
                 <li><a href="#tracks">Training Tracks</a></li>
                 <li><a href="#curriculum">Deep Dive</a></li>
