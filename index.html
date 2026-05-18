@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotive Cybersecurity Training | CybersecurityTraining.in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-main: #030712;
+            --bg-surface: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.15);
+            --secondary: #c084fc;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Tech Background Grid */
+        .grid-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Top Header Navigation */
+        header {
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 80px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .brand-domain {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-domain span {
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .btn-enroll {
+            background: var(--primary);
+            color: var(--bg-main);
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-enroll:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Hero Portal Area */
+        .hero-portal {
+            position: relative;
+            padding: 120px 0 80px 0;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-portal::before {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-layout {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge-site {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(56, 189, 248, 0.06);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-layout h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            line-height: 1.15;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero-layout p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        /* Core Catalog / Tracks Section */
+        .catalog-section {
+            padding: 90px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 968px) {
+            .tracks-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .tracks-grid { grid-template-columns: 1fr; }
+        }
+
+        .track-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .track-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .track-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .track-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .track-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .syllabus-preview {
+            list-style: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .syllabus-preview li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .syllabus-preview li i {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .btn-card {
+            display: block;
+            text-align: center;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+
+        .track-card:hover .btn-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+        }
+
+        /* Interactive Curriculum Map / Details Section */
+        .curriculum-map {
+            padding: 90px 0;
+            background: rgba(15, 23, 42, 0.3);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .curriculum-block {
+            background: var(--bg-surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .curriculum-block h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .curriculum-block p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        /* Training Portal Direct Contact */
+        .portal-contact {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+
+        .info-card-hub {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .hub-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .hub-row:last-child { margin-bottom: 0; }
+
+        .hub-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-glow);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        .hub-text span {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .hub-text a, .hub-text p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .hub-text a:hover { color: var(--primary); }
+
+        /* Footer */
+        footer {
+            background: #02040a;
+            border-top: 1px solid var(--border);
+            padding: 35px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="brand-domain">Cybersecurity<span>Training.in</span></a>
+            <ul class="nav-menu">
+                <li><a href="#tracks">Training Tracks</a></li>
+                <li><a href="#curriculum">Deep Dive</a></li>
+                <li><a href="#register">Register Hub</a></li>
+                <li><a href="#register" class="btn-enroll">Apply Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Portal Area -->
+    <section class="hero-portal">
+        <div class="grid-bg"></div>
+        <div class="container">
+            <div class="hero-layout">
+                <div class="badge-site"><i class="fa-solid fa-graduation-cap"></i> Enterprise Academy</div>
+                <h1>Industrial Engineering Training For Automotive Cybersecurity</h1>
+                <p>Equipping global engineering cohorts, Tier-N supply networks, and security professionals with verified competencies across critical domains like ISO 21434 architectures, advanced TARA execution, and UN R155 readiness audits.</p>
+                <div style="display: flex; justify-content: center; gap: 15px;">
+                    <a href="#tracks" class="btn-enroll" style="padding: 14px 28px;">Explore Tracks</a>
+                    <a href="#register" class="btn-card" style="padding: 14px 28px; background: rgba(255,255,255,0.02);">Request Syllabus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Tracks Section -->
+    <section id="tracks" class="catalog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Specialized Training Modules</h2>
+                <p>Standardized engineering tracks constructed explicitly to completely eliminate unvetted operational flaws from product line frameworks.</p>
+            </div>
+
+            <div class="tracks-grid">
+                <!-- Track 1 -->
+                <div class="track-card">
+                    <div>
+                        <div class="track-meta"><span>Track 01</span><span>16 Hours</span></div>
+                        <h3>Governance & CSMS Alignment</h3>
+                        <p>Constructing high-compliance organizational engineering processes according to globally standardized regulatory metrics.</p>
+                        <ul class="syllabus-preview">
+                            <li><i class="fa-solid fa-circle-check"></i> ISO 21434 Organizational Audit Setup</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Supplier CIA Document Blueprints</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Core Cybersecurity Culture Rollouts</li>
+                        </ul>
+                    </div>
+                    <a href="#register" class="btn-card">View Cohort Schedule</a>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="track-card">
+                    <div>
+                        <div class="track-meta"><span>Track 02</span><span>24 Hours</span></div>
+                        <h3>Risk Modeling & TARA Blueprinting</h3>
+                        <p>Mastering structural vehicle vulnerability modeling across complex multi-vector operational nodes.</p>
+                        <ul class="syllabus-preview">
+                            <li><i class="fa-solid fa-circle-check"></i> Structured Asset and Boundary Identification</li>
+                            <li><i class="fa-solid fa-circle-check"></i> SFOP Impact Matrix Calculation Rules</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Practical Attack Feasibility Appraisals</li>
+                        </ul>
+                    </div>
+                    <a href="#register" class="btn-card">View Cohort Schedule</a>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="track-card">
+                    <div>
+                        <div class="track-meta"><span>Track 03</span><span>32 Hours</span></div>
+                        <h3>Defense Engineering & Validation</h3>
+                        <p>Deep engineering dive into silicon level defenses, cryptographic authentication, and system testing loops.</p>
+                        <ul class="syllabus-preview">
+                            <li><i class="fa-solid fa-circle-check"></i> HSM Integration & Secure Boot Isolation</li>
+                            <li><i class="fa-solid fa-circle-check"></i> SecOC Bus Authentication Deployments</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Protocol Fuzzing & Red Team Testing</li>
+                        </ul>
+                    </div>
+                    <a href="#register" class="btn-card">View Cohort Schedule</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Mapping Segment -->
+    <section id="curriculum" class="curriculum-map">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Subsystem Scope</h2>
+                <p>Review the exact structural vectors covered inside our technical engineering tracks.</p>
+            </div>
+
+            <div class="curriculum-block">
+                <h3><i class="fa-solid fa-microchip"></i> Node Hardening (Hardware Root of Trust)</h3>
+                <p>Architecting independent core crypto operations separate from standard app layers. Includes configuring monotonic roll-back prevention counters, managing keys securely inside operational zones, and structural design paths for secure flashing procedures.</p>
+            </div>
+
+            <div class="curriculum-block">
+                <h3><i class="fa-solid fa-network-wired"></i> Bus-Network Ingestion Defense</h3>
+                <p>Halting network data spoofing and sniffing vectors on legacy CAN matrix setups as well as next-generation automotive backbones. Focuses on setting up runtime SecOC authentications and implementing TLS 1.3 / MACsec protocols over high-bandwidth vehicle Ethernet links.</p>
+            </div>
+
+            <div class="curriculum-block">
+                <h3><i class="fa-solid fa-clipboard-check"></i> Post-Production & Compliance Homologation</h3>
+                <p>Establishing operational PSIRT infrastructure capable of parsing active zero-day tracking feeds and building cryptographically signed OTA delivery frameworks. Compiling traceable compliance evidence bundles necessary to secure global UN R155/R156 type approvals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Hub Section -->
+    <section id="register" class="portal-contact">
+        <div class="grid-bg"></div>
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <span class="badge-site">Enrollment Hub</span>
+                    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; margin-bottom: 20px;">Secure Corporate Team Training Slots</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px;">We specialize in hosting dedicated training bootcamps for automotive engineering squads and Tier-1 hardware supply firms. Reach out directly to book standard group tracks or configure custom syllabus modules.</p>
+                </div>
+
+                <div class="info-card-hub">
+                    <div class="hub-row">
+                        <div class="hub-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div class="hub-text">
+                            <span>Admissions Desk</span>
+                            <p><a href="mailto:akashsubhmishra@gmail.com">akashsubhmishra@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="hub-row">
+                        <div class="hub-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="hub-text">
+                            <span>Direct Academy Line</span>
+                            <p><a href="tel:7000429830">+91 7000429830</a></p>
+                        </div>
+                    </div>
+
+                    <div class="hub-row">
+                        <div class="hub-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div class="hub-text">
+                            <span>Assigned Live URL</span>
+                            <p style="color: var(--primary); font-weight: 500;">cybersecuritytraining.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CybersecurityTraining.in. Optimized for GitHub Pages hosting. Built for absolute automotive engineering readiness.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
